@@ -1,0 +1,1196 @@
+/* ============================================
+   株式会社職人さんドットコム - 共通CSS
+   ============================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: #f7f9fc;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Utility --- */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mt-40 { margin-top: 40px; }
+.mt-60 { margin-top: 60px; }
+.bg-white { background: #ffffff; }
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo-main {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f4c81;
+  letter-spacing: 0.02em;
+}
+
+.logo-sub {
+  font-size: 0.7rem;
+  color: #64748b;
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav a:hover,
+.nav a.nav-active {
+  color: #0f4c81;
+}
+
+.nav a.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #0f4c81;
+  border-radius: 1px;
+}
+
+.nav-contact {
+  background: #0f4c81 !important;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  transition: background 0.3s !important;
+}
+
+.nav-contact:hover {
+  background: #0d3f6e !important;
+}
+
+.nav-contact.nav-active::after {
+  display: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #334155;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0a3d6b 0%, #1565a0 50%, #1976b8 100%);
+  color: white;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 760px;
+}
+
+.hero-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  margin-bottom: 36px;
+  opacity: 0.92;
+  line-height: 1.9;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-accent {
+  background: #e8920b;
+  color: white;
+  border-color: #e8920b;
+}
+
+.btn-accent:hover {
+  background: #d07d08;
+  border-color: #d07d08;
+}
+
+.btn-primary {
+  background: #0f4c81;
+  color: white;
+  border-color: #0f4c81;
+}
+
+.btn-primary:hover {
+  background: #0d3f6e;
+  border-color: #0d3f6e;
+}
+
+.btn-white {
+  background: white;
+  color: #0f4c81;
+}
+
+.btn-white:hover {
+  background: #e8edf3;
+}
+
+.btn-white-outline {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.btn-white-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+}
+
+/* ============================================
+   Section
+   ============================================ */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.section-lead {
+  text-align: center;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto 48px;
+  line-height: 1.9;
+}
+
+/* ============================================
+   Worry Cards (TOP)
+   ============================================ */
+.worry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.worry-card {
+  background: #f7f9fc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.worry-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.worry-icon {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.worry-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.worry-card strong {
+  color: #0f4c81;
+}
+
+/* ============================================
+   Feature Cards (TOP)
+   ============================================ */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 4px solid #0f4c81;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+.feature-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0f4c81;
+  opacity: 0.2;
+  margin-bottom: 8px;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   System Cards (特定技能)
+   ============================================ */
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.system-card {
+  background: #f0f5fa;
+  border-radius: 14px;
+  padding: 32px;
+  border: 1px solid #d4e0ed;
+}
+
+.system-card h3 {
+  font-size: 1.2rem;
+  color: #0f4c81;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.system-card ul {
+  list-style: none;
+}
+
+.system-card li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.system-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  background: #0f4c81;
+  border-radius: 50%;
+}
+
+/* ============================================
+   Service Flow (TOP)
+   ============================================ */
+.service-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.flow-step {
+  flex: 1;
+  background: white;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  text-align: center;
+}
+
+.flow-num {
+  display: inline-block;
+  background: #0f4c81;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+}
+
+.flow-step h3 {
+  font-size: 1.05rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.flow-step p {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  color: #cbd5e1;
+  font-size: 1.5rem;
+}
+
+.flow-arrow::after {
+  content: "\25B6";
+  color: #cbd5e1;
+}
+
+/* ============================================
+   Two Column (NEWS & FAQ)
+   ============================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.col-card {
+  background: #f7f9fc;
+  border-radius: 14px;
+  padding: 32px;
+  border: 1px solid #e2e8f0;
+}
+
+.col-card-title {
+  font-size: 1.15rem;
+  color: #0f4c81;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #0f4c81;
+  font-weight: 700;
+}
+
+.news-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  background: #e8edf3;
+  color: #0f4c81;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.news-text {
+  color: #475569;
+}
+
+.link-more {
+  display: inline-block;
+  margin-top: 16px;
+  color: #0f4c81;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.link-more::after {
+  content: " \2192";
+}
+
+.link-more:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   CTA
+   ============================================ */
+.cta {
+  background: linear-gradient(135deg, #0a3158 0%, #0f4c81 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.cta p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+  line-height: 1.9;
+}
+
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 50px 0 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 30px;
+}
+
+.footer-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 14px;
+}
+
+.footer-info p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav a {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #e2e8f0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #334155;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+}
+
+/* ============================================
+   Page Header (下層ページ共通)
+   ============================================ */
+.page-header {
+  background: linear-gradient(135deg, #0a3d6b 0%, #1565a0 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.page-header p {
+  margin-top: 10px;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   Content (下層ページ共通)
+   ============================================ */
+.content {
+  padding: 60px 0 80px;
+}
+
+.content-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* --- Service Page --- */
+.service-block {
+  margin-bottom: 48px;
+}
+
+.service-block h2 {
+  font-size: 1.35rem;
+  color: #0f4c81;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0f4c81;
+}
+
+.service-block p {
+  color: #475569;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.service-list {
+  list-style: none;
+}
+
+.service-list li {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: #0f4c81;
+  border-radius: 3px;
+}
+
+/* --- Company Page --- */
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+}
+
+.company-table th,
+.company-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  vertical-align: top;
+}
+
+.company-table th {
+  background: #f0f5fa;
+  color: #0f4c81;
+  font-weight: 700;
+  width: 200px;
+  white-space: nowrap;
+}
+
+.company-table td {
+  color: #334155;
+}
+
+.company-table ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.company-table li {
+  padding: 3px 0;
+}
+
+.strength-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.strength-list li {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #0f4c81;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* --- History --- */
+.history-list {
+  position: relative;
+  padding-left: 28px;
+}
+
+.history-list::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #d4e0ed;
+}
+
+.history-item {
+  position: relative;
+  padding: 10px 0;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.history-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  background: #0f4c81;
+  border-radius: 50%;
+  border: 2px solid #f7f9fc;
+}
+
+.history-year {
+  font-weight: 700;
+  color: #0f4c81;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.history-text {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+/* --- Topics / News Page --- */
+.topics-list {
+  list-style: none;
+}
+
+.topics-list li {
+  padding: 20px 0;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.topics-list li:first-child {
+  padding-top: 0;
+}
+
+.topics-date {
+  background: #0f4c81;
+  color: white;
+  padding: 3px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.topics-text {
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+/* --- FAQ Page --- */
+.faq-item {
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+.faq-q {
+  padding: 20px 24px;
+  font-weight: 700;
+  color: #0f172a;
+  background: #f8fafc;
+  border-left: 4px solid #0f4c81;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-q::before {
+  content: "Q";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #0f4c81;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.faq-a {
+  padding: 20px 24px 20px 66px;
+  color: #475569;
+  line-height: 1.9;
+  position: relative;
+}
+
+.faq-a::before {
+  content: "A";
+  position: absolute;
+  left: 24px;
+  top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #e8920b;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* --- Contact Page --- */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.contact-info-card {
+  background: #f0f5fa;
+  border-radius: 14px;
+  padding: 28px;
+  text-align: center;
+  border: 1px solid #d4e0ed;
+}
+
+.contact-info-card h3 {
+  color: #0f4c81;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.contact-info-card .contact-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.contact-info-card p {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-group label .required {
+  background: #dc2626;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.form-group label .optional {
+  background: #94a3b8;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #334155;
+  background: white;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0f4c81;
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.1);
+}
+
+.form-group textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.form-submit .btn {
+  min-width: 260px;
+  padding: 16px 32px;
+  font-size: 1rem;
+}
+
+.form-note {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 16px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 900px) {
+  .worry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .system-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-flow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    padding: 0;
+    justify-content: center;
+    height: 30px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .strength-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-table th {
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 30px 30px;
+    gap: 20px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s;
+    z-index: 1000;
+  }
+
+  .nav.open {
+    right: 0;
+  }
+
+  .nav a {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+
+  .nav-contact {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .worry-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .worry-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .worry-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .worry-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 1.4rem;
+  }
+
+  .page-header {
+    padding: 40px 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .company-table,
+  .company-table thead,
+  .company-table tbody,
+  .company-table tr,
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .company-table th {
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .company-table td {
+    padding-top: 4px;
+  }
+
+  .topics-list li {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.35rem;
+  }
+
+  .cta-btns {
+    flex-direction: column;
+  }
+}

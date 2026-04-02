@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 株式会社職人さんドットコム</title>
+  <meta name="description" content="特定技能外国人材の採用・受入れに関するご相談・お問い合わせはこちらから。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">職人さんドットコム</span>
+        <span class="logo-sub">登録支援機関</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス内容</a>
+        <a href="company.html">会社概要</a>
+        <a href="topics.html">ニュース</a>
+        <a href="qa.html">よくあるご質問</a>
+        <a href="contact.html" class="nav-contact nav-active">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>お問い合わせ</h1>
+      <p>特定技能外国人材の採用・受入れに関するご相談はお気軽にどうぞ</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container content-inner">
+
+      <!-- 電話・メール -->
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <h3>お電話でのお問い合わせ</h3>
+          <a href="tel:0368233524" class="contact-val">03-6823-3524</a>
+          <p>受付時間：平日 9:00〜18:00</p>
+        </div>
+        <div class="contact-info-card">
+          <h3>メールでのお問い合わせ</h3>
+          <a href="mailto:info@shokunin-san.com" class="contact-val">info@shokunin-san.com</a>
+          <p>24時間受付・2営業日以内にご返信</p>
+        </div>
+      </div>
+
+      <!-- フォーム -->
+      <div class="service-block">
+        <h2>お問い合わせフォーム</h2>
+        <p>以下のフォームに必要事項をご記入のうえ、送信してください。<br>内容を確認後、担当者よりご連絡いたします。</p>
+
+        <form action="#" method="post" class="mt-40" id="contactForm">
+
+          <div class="form-group">
+            <label>会社名 <span class="required">必須</span></label>
+            <input type="text" name="company" placeholder="例：株式会社○○" required>
+          </div>
+
+          <div class="form-group">
+            <label>ご担当者名 <span class="required">必須</span></label>
+            <input type="text" name="name" placeholder="例：山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label>メールアドレス <span class="required">必須</span></label>
+            <input type="email" name="email" placeholder="例：info@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>電話番号 <span class="optional">任意</span></label>
+            <input type="tel" name="tel" placeholder="例：03-1234-5678">
+          </div>
+
+          <div class="form-group">
+            <label>業種 <span class="optional">任意</span></label>
+            <select name="industry">
+              <option value="">選択してください</option>
+              <option value="介護">介護</option>
+              <option value="ビルクリーニング">ビルクリーニング</option>
+              <option value="製造業">素形材・産業機械・電気電子情報関連製造業</option>
+              <option value="建設">建設</option>
+              <option value="造船・舶用工業">造船・舶用工業</option>
+              <option value="自動車整備">自動車整備</option>
+              <option value="航空">航空</option>
+              <option value="宿泊">宿泊</option>
+              <option value="農業">農業</option>
+              <option value="漁業">漁業</option>
+              <option value="飲食料品製造業">飲食料品製造業</option>
+              <option value="外食業">外食業</option>
+              <option value="自動車運送業">自動車運送業</option>
+              <option value="鉄道">鉄道</option>
+              <option value="林業">林業</option>
+              <option value="木材産業">木材産業</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea name="message" placeholder="ご相談内容をご記入ください。&#10;例：特定技能外国人の採用を検討しています。まずは制度について詳しく知りたいです。" required></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-accent">送信する</button>
+          </div>
+          <p class="form-note">※ お問い合わせいただいた内容は、ご返信およびサービスのご案内にのみ使用いたします。</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section class="section bg-white">
+    <div class="container content-inner">
+      <div class="service-block">
+        <h2>アクセス</h2>
+        <p>〒220-0004 神奈川県横浜市西区北幸2丁目10-28 むつみビル3F</p>
+        <div class="mt-20" style="border-radius:12px; overflow:hidden; border:1px solid #e2e8f0;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.9!2d139.6188!3d35.4658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5qiq5rWc6aeF!5e0!3m2!1sja!2sjp!4v1"
+            width="100%"
+            height="350"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p class="mt-20" style="color:#64748b; font-size:0.9rem;">JR横浜駅 西口より徒歩5分</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="footer-logo">株式会社職人さんドットコム</div>
+          <p>〒220-0004<br>神奈川県横浜市西区北幸2丁目10-28 むつみビル3F</p>
+          <p>TEL: 03-6823-3524 / FAX: 03-6730-7966</p>
+          <p>Email: info@shokunin-san.com</p>
+        </div>
+        <div class="footer-nav">
+          <a href="index.html">ホーム</a>
+          <a href="service.html">サービス内容</a>
+          <a href="company.html">会社概要</a>
+          <a href="topics.html">ニュース</a>
+          <a href="qa.html">よくあるご質問</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社職人さんドットコム All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

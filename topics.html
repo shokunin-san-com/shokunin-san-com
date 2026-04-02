@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニュース＆トピックス | 株式会社職人さんドットコム</title>
+  <meta name="description" content="特定技能制度の最新情報やお知らせを掲載しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">職人さんドットコム</span>
+        <span class="logo-sub">登録支援機関</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">サービス内容</a>
+        <a href="company.html">会社概要</a>
+        <a href="topics.html" class="nav-active">ニュース</a>
+        <a href="qa.html">よくあるご質問</a>
+        <a href="contact.html" class="nav-contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>ニュース＆トピックス</h1>
+      <p>特定技能制度に関する最新情報やお知らせを掲載しています</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container content-inner">
+
+      <ul class="topics-list">
+        <li>
+          <span class="topics-date">2026.04</span>
+          <span class="topics-text">特定技能制度の対象分野拡大と最新情報</span>
+        </li>
+        <li>
+          <span class="topics-date">2026.03</span>
+          <span class="topics-text">特定技能2号対象分野の拡大に関するお知らせ</span>
+        </li>
+        <li>
+          <span class="topics-date">2025.01</span>
+          <span class="topics-text">株式会社平井工業のグループ会社化のお知らせ</span>
+        </li>
+      </ul>
+
+      <p class="center mt-60" style="color:#94a3b8; font-size:0.9rem;">最新のニュースを随時更新してまいります。</p>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>特定技能外国人材の採用について<br>お気軽にご相談ください</h2>
+      <p>制度に関するご質問や、採用に関するご相談をお待ちしております。</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-accent">無料相談・お問い合わせ</a>
+        <a href="tel:0368233524" class="btn btn-white-outline">TEL: 03-6823-3524</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <div class="footer-logo">株式会社職人さんドットコム</div>
+          <p>〒220-0004<br>神奈川県横浜市西区北幸2丁目10-28 むつみビル3F</p>
+          <p>TEL: 03-6823-3524 / FAX: 03-6730-7966</p>
+          <p>Email: info@shokunin-san.com</p>
+        </div>
+        <div class="footer-nav">
+          <a href="index.html">ホーム</a>
+          <a href="service.html">サービス内容</a>
+          <a href="company.html">会社概要</a>
+          <a href="topics.html">ニュース</a>
+          <a href="qa.html">よくあるご質問</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社職人さんドットコム All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
