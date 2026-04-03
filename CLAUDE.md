@@ -45,24 +45,24 @@ style.css        - 共通CSS（レスポンシブ対応）
 - `main` ブランチへのプッシュで Vercel に自動デプロイされる
 - Vercel の GitHub 連携済み
 
-## 現在の状況（2026-04-02時点）
+## 現在の状況（2026-04-03時点）
 
 ### 完了済み
 - 全6ページの初期HTML/CSS作成
 - GitHubリポジトリ作成（shokunin-san-com組織配下）
 - Vercelデプロイ完了・自動デプロイ設定済み
 - 会社情報の修正（代表者名: 岡部洋佑、正確な住所・許認可番号等を反映）
+- **#2** レスポンシブデザイン精査・ナビゲーション改善（オーバーレイ・スクロール防止・dvh対応）
+- **#3** お問い合わせフォームのバックエンド実装（GAS連携・info01@shokunin-san.comへ送信）
+- **#4** Google Map埋め込みURL修正
+- **#5** SEO: OGPタグ・Twitter Card・canonical・JSON-LD構造化データ（Organization/LocalBusiness/FAQPage）
+- **#6** SEO: sitemap.xml・robots.txt作成（GA4・Search Consoleは未設定）
+- **#8** プライバシーポリシーページ作成・全ページフッターにリンク追加
 
 ### 未対応（Issue管理中）
-- **#1** ビジュアル強化（AI画像・イラスト追加、スクロールアニメーション）
-- **#2** レスポンシブデザイン精査・ナビゲーション改善
-- **#3** お問い合わせフォームのバックエンド実装（現在action="#"で送信不可）
-- **#4** Google Map埋め込みURL修正（現在仮URL）
-- **#5** SEO: OGPタグ・構造化データ・メタ情報整備
-- **#6** SEO: sitemap.xml・robots.txt・GA4・Search Console
-- **#7** Favicon・OGP画像・ロゴのアセット整備
-- **#8** プライバシーポリシーページの追加
-- **#9** カスタムドメインの設定
+- **#1** ビジュアル強化 → AI画像・イラストが未作成のため保留
+- **#7** Favicon・OGP画像・ロゴのアセット整備 → アセット未準備のため保留
+- **#9** カスタムドメインの設定 → Vercelチームプラン（Pro）が必要なため保留。個人アカウントへの移行 or Pro契約で対応可能。shokulab.comのサブドメイン（tokutei.shokulab.com）を使用予定だった
 
 ## 開発メモ
 - プレビューサーバーは `python3 -m http.server 3000` で起動（npxが使えない環境）
