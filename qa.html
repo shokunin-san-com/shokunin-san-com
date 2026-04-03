@@ -5,10 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>よくあるご質問 | 株式会社職人さんドットコム</title>
   <meta name="description" content="特定技能外国人の受入れや支援に関する、よくいただくご質問をまとめています。">
+  <link rel="canonical" href="https://shokunin-san-com.vercel.app/qa.html">
+  <meta property="og:title" content="よくあるご質問 | 株式会社職人さんドットコム">
+  <meta property="og:description" content="特定技能外国人の受入れや支援に関するよくいただくご質問をまとめています。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shokunin-san-com.vercel.app/qa.html">
+  <meta property="og:site_name" content="株式会社職人さんドットコム">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="よくあるご質問 | 株式会社職人さんドットコム">
+  <meta name="twitter:description" content="特定技能外国人の受入れや支援に関するよくいただくご質問をまとめています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "登録支援機関は何をしてくれるのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "入管法に基づく支援計画の策定、在留資格申請支援のほか、入社後の定期面談、生活支援（住居・医療・行政手続き）、日本語学習機会の提供などを行います。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どのような分野で外国人を雇用できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在、特定技能制度では16の産業分野が対象となっています。外食業、介護、製造業、建設、宿泊業、農業、自動車運送業など幅広い分野に対応可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "外国人を初めて採用するのですが、大丈夫でしょうか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "全く問題ありません。当社をご利用いただく企業様の多くが初めての受入れです。制度の説明から申請手続き、受入れ後のサポートまで、専門スタッフが丁寧にご案内いたします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "採用までにどれくらいの期間がかかりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "国内在住の方であれば最短1〜2ヶ月程度、海外からの受入れの場合は3〜6ヶ月程度が目安です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "特定技能1号と2号の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "特定技能1号は在留期間が通算5年で家族帯同は原則不可です。特定技能2号は在留期間の更新に上限がなく、配偶者やお子様の帯同も認められています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "技能実習生から特定技能への移行は可能ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、可能です。技能実習2号を良好に修了した方は、同じ業務区分であれば試験免除で特定技能1号へ移行できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "費用はどのくらいかかりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "紹介料や支援委託費は、受入れ人数や支援内容によって異なります。まずはお気軽にお問い合わせいただければ、貴社の状況に合わせたお見積りをご提示いたします。"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -31,6 +105,7 @@
       </nav>
     </div>
   </header>
+  <div class="nav-overlay" id="navOverlay"></div>
 
   <section class="page-header">
     <div class="container">
@@ -112,6 +187,7 @@
           <a href="topics.html">ニュース</a>
           <a href="qa.html">よくあるご質問</a>
           <a href="contact.html">お問い合わせ</a>
+          <a href="privacy.html">プライバシーポリシー</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -123,16 +199,21 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
+    const overlay = document.getElementById('navOverlay');
+    function closeNav() {
+      hamburger.classList.remove('active');
+      nav.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
     hamburger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
       hamburger.classList.toggle('active');
-      nav.classList.toggle('open');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        nav.classList.remove('open');
-      });
-    });
+    overlay.addEventListener('click', closeNav);
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
   </script>
 
 </body>

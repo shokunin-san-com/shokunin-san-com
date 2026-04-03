@@ -1080,6 +1080,7 @@ ul, ol {
     right: -100%;
     width: 280px;
     height: 100vh;
+    height: 100dvh;
     background: white;
     flex-direction: column;
     padding: 80px 30px 30px;
@@ -1087,10 +1088,23 @@ ul, ol {
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
     transition: right 0.3s;
     z-index: 1000;
+    overflow-y: auto;
   }
 
   .nav.open {
     right: 0;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+
+  .nav-overlay.active {
+    display: block;
   }
 
   .nav a {

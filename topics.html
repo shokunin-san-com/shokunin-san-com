@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ニュース＆トピックス | 株式会社職人さんドットコム</title>
   <meta name="description" content="特定技能制度の最新情報やお知らせを掲載しています。">
+  <link rel="canonical" href="https://shokunin-san-com.vercel.app/topics.html">
+  <meta property="og:title" content="ニュース＆トピックス | 株式会社職人さんドットコム">
+  <meta property="og:description" content="特定技能制度の最新情報やお知らせを掲載しています。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shokunin-san-com.vercel.app/topics.html">
+  <meta property="og:site_name" content="株式会社職人さんドットコム">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ニュース＆トピックス | 株式会社職人さんドットコム">
+  <meta name="twitter:description" content="特定技能制度の最新情報やお知らせを掲載しています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -31,6 +41,7 @@
       </nav>
     </div>
   </header>
+  <div class="nav-overlay" id="navOverlay"></div>
 
   <section class="page-header">
     <div class="container">
@@ -89,6 +100,7 @@
           <a href="topics.html">ニュース</a>
           <a href="qa.html">よくあるご質問</a>
           <a href="contact.html">お問い合わせ</a>
+          <a href="privacy.html">プライバシーポリシー</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -100,16 +112,21 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
+    const overlay = document.getElementById('navOverlay');
+    function closeNav() {
+      hamburger.classList.remove('active');
+      nav.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
     hamburger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
       hamburger.classList.toggle('active');
-      nav.classList.toggle('open');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        nav.classList.remove('open');
-      });
-    });
+    overlay.addEventListener('click', closeNav);
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
   </script>
 
 </body>
