@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /.vercel/
+Disallow: /docs/
+Disallow: /CLAUDE.md
+Disallow: /gas-contact-form.js
 
 Sitemap: https://shokunin-san-com.vercel.app/sitemap.xml
